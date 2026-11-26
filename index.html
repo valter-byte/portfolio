@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valter Portfolio | Discord</title>
+<meta name="description" content="Discord servers, custom bots and community management for Roblox games.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<!--
+  HOW TO EDIT
+  1. Texts: search for the words you want to change and type over them.
+  2. Images: every picture is a <img src="assets/..."> inside a "slot". Put your file in the "assets" folder
+     with that exact name (or change the name in src). Empty slots show a dashed box with the file name.
+  3. Links: search for YOUR_ (email, Discord, Roblox) and replace them.
+  4. Colors: change the values at the top of the CSS (:root).
+  To add one more image to a gallery, copy a whole <figure class="shot">...</figure> block.
+-->
+<style>
+:root{
+  --ink:#ece9e2; --mute:rgba(222,228,255,.74); --line:rgba(190,205,255,.5);
+  --lime:#c8ff00; --w:894px;
+}
+*{box-sizing:border-box}
+html{background:#000;color-scheme:dark;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--ink);font:400 1rem/1.75 Inter,system-ui,sans-serif;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(70% 60% at 62% 38%,#0b32d4 0%,#0026b0 38%,#00124f 75%,transparent 100%),
+    radial-gradient(55% 45% at 100% 100%,#0024b4 0%,transparent 70%),#000}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-weight:300;margin:0;line-height:1.1;letter-spacing:-.01em}
+p{margin:0}
+.mute{color:var(--mute)}
+
+.btn{display:inline-flex;align-items:center;gap:12px;padding:12px 18px;border:1px solid rgba(255,255,255,.3);
+  background:rgba(0,0,12,.12);color:var(--ink);text-decoration:none;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:border-color .2s,background .2s}
+.btn:hover{border-color:var(--lime);background:rgba(200,255,0,.08)}
+.top{display:flex;justify-content:space-between;gap:12px;padding-top:28px;flex-wrap:wrap}
+.top div{display:flex;gap:8px;flex-wrap:wrap}
+
+.hero{padding:72px 0 56px}
+.hero h1{font-size:clamp(3.1rem,10.5vw,7.4rem);letter-spacing:-.035em}
+.hero p{margin-top:32px;max-width:52em;color:var(--mute)}
+.hero p strong{color:var(--ink)}
+hr{border:0;border-top:1px solid var(--line);margin:0}
+hr.lime{border-color:var(--lime)}
+
+.intro{display:grid;grid-template-columns:350px 1fr;gap:56px;align-items:center;padding:72px 0}
+.intro h2{font-size:clamp(2rem,4.6vw,3.2rem)}
+.intro p{margin-top:28px;color:var(--mute)}
+
+.services{padding:24px 0 16px}
+.svc{display:grid;grid-template-columns:290px 1fr auto;gap:28px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
+.svc:last-child{border-bottom:0}
+.svc h3{font-size:1.9rem}
+.svc p{margin-top:12px;color:var(--mute);max-width:20em}
+.more{border:1px solid rgba(190,205,255,.3);padding:44px 48px;margin:24px 0 48px;background:rgba(0,0,40,.18)}
+.more h3{font-size:2.3rem}
+.more p{margin:24px 0 28px;color:var(--mute);max-width:46em}
+.price{padding:0 0 88px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(222,228,255,.6)}
+
+/* image slots */
+.slot{position:relative;aspect-ratio:16/10;border:1px solid var(--lime);background:rgba(0,0,30,.35);overflow:hidden}
+.slot.sq{aspect-ratio:1/1;background:#000}
+.slot.wide{aspect-ratio:21/9}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.slot span{display:none;position:absolute;inset:0;place-items:center;text-align:center;padding:16px;font-size:.8rem;color:var(--mute);border:1px dashed rgba(255,255,255,.35);margin:8px}
+.slot.empty img{display:none}
+.slot.empty span{display:grid}
+.shot{margin:0}
+.shot figcaption{margin-top:10px;font-size:.88rem;color:var(--mute)}
+.g2,.g3{display:grid;gap:20px;margin-top:28px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+
+/* detail sections */
+.detail{padding:88px 0;border-top:1px solid var(--line)}
+.detail:nth-of-type(odd){border-top-color:var(--lime)}
+.detail h2{font-size:clamp(2.4rem,6.5vw,4.6rem);letter-spacing:-.025em}
+.detail h3{font-size:1.7rem;margin-top:72px}
+.lead{margin-top:28px;max-width:48em;color:var(--mute)}
+.back{display:inline-block;margin-bottom:32px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);text-decoration:none}
+.back:hover{color:var(--lime)}
+.inc{list-style:none;margin:48px 0 0;padding:0}
+.inc li{display:grid;grid-template-columns:1fr 2fr;gap:28px;padding:18px 0;border-top:1px solid rgba(190,205,255,.3)}
+.inc li:last-child{border-bottom:1px solid rgba(190,205,255,.3)}
+.inc b{font-weight:600}
+.inc span{color:var(--mute)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:28px}
+.cta{margin-top:56px}
+
+.steps{list-style:none;counter-reset:s;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.steps li{counter-increment:s;border-top:1px solid var(--lime);padding-top:14px;color:var(--mute)}
+.steps li::before{content:counter(s);display:block;font-size:2rem;font-weight:300;color:var(--ink)}
+.steps b{display:block;color:var(--ink);font-weight:600}
+.promo{margin-top:56px;padding:24px 28px;border:1px solid var(--lime);max-width:46em}
+.promo h3{font-size:1.5rem}
+.promo p{margin-top:8px;color:var(--mute)}
+.contact .cta{display:flex;gap:10px;flex-wrap:wrap}
+footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
+
+@media (max-width:760px){
+  .intro,.svc,.split,.inc li{grid-template-columns:1fr}
+  .intro{gap:32px}.svc{gap:16px}.inc li{gap:4px}
+  .g2,.g3,.steps{grid-template-columns:1fr}
+  .more{padding:28px 22px}
+  .detail{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="btn" href="mailto:YOUR_EMAIL@example.com">Email</a>
+  <div>
+    <a class="btn" href="https://discord.com/users/YOUR_DISCORD_ID">Discord</a>
+    <a class="btn" href="https://www.roblox.com/users/YOUR_ROBLOX_ID/profile">Roblox</a>
+    <a class="btn" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="home">
+<div class="wrap">
+  <section class="hero">
+    <h1>More than a server</h1>
+    <p>Forget about old Discord servers where you join, send messages, and leave. I offer <strong>integration, engagement</strong>, and <strong>customization</strong> with your game or Roblox group.<br>
+    I propose a place for your community to engage, keep updated to your game, use in-game features or webhooks to keep playing your game, without having to be on Roblox.<br>
+    In case you have a developer team, I can create Discord apps to track tasks, automate processes, keep everyone updated, and more.</p>
+  </section>
+  <hr class="lime">
+
+  <section class="intro">
+    <figure class="shot"><div class="slot sq"><img src="assets/intro.gif" data-fb="https://valter-server.carrd.co/assets/images/image01.gif" alt=""></div></figure>
+    <div>
+      <h2>Decoration. Management. Training. Creation. And more.</h2>
+      <p>I do not just join your server, put some emojis, do the permissions check, and leave, leaving you without idea what to do next, how to grow, or how to integrate.<br>
+      I offer customization at another level: hand-made bots for your custom needs, custom community approach, custom events, anything you would like, made precisely for you and your community.</p>
+    </div>
+  </section>
+  <hr>
+
+  <section class="services">
+    <div class="svc">
+      <div class="slot"><img src="assets/setup-cover.jpg" data-fb="https://valter-server.carrd.co/assets/images/image02.jpg" alt=""></div>
+      <div><h3>Server set-up</h3><p>Roles, decorations, channels, bots, you know the drill.</p></div>
+      <a class="btn" href="#setup">Learn more <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="svc">
+      <div class="slot"><img src="assets/bots-cover.jpg" data-fb="https://valter-server.carrd.co/assets/images/image05.jpg" alt=""></div>
+      <div><h3>Bot creation &amp; Hosting</h3><p>Custom bots, made for your needs. Integration and utility.</p></div>
+      <a class="btn" href="#bots">Learn more <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="svc">
+      <div class="slot"><img src="assets/managing-cover.jpg" data-fb="https://valter-server.carrd.co/assets/images/image06.jpg" alt=""></div>
+      <div><h3>Managing, Training and Analyzing</h3><p>Community Managing, Staff Training and evaluation. Data analytics to keep your server working.</p></div>
+      <a class="btn" href="#managing">Learn more <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="more">
+      <h3>It does not end there:</h3>
+      <p>I am also able to make custom servers for dev teams, aiming for a better workflow and ambience, and I can do small scripting and building tasks on Roblox Studio, and regular scripts for any of your needs, mainly for Linux.</p>
+      <a class="btn" href="#more">Learn more <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  <p class="price">For pricing, offers and combos, DM on Discord or send me an email.</p>
+</div>
+
+<!-- ============ SERVER SET-UP ============ -->
+<section class="detail" id="setup">
+  <div class="wrap">
+    <a class="back" href="#home">← Back to top</a>
+    <h2>Server set-up</h2>
+    <p class="lead">The cool part. I offer various decoration styles: custom dividers, embeds, and more. I set rules, add bots, adjust roles, create channels, set onboarding, whatever you want. Although it may seem skippable, I strongly suggest not cutting down on this aspect. A great, related, readable and cool decoration for your channels, roles, embeds and images is what defines if members engage or ignore. Eccentric or simple; it is your choice.</p>
+    <ul class="inc">
+      <li><b>Roles and permissions</b><span>Clear hierarchy, staff roles, member roles and the permission check. EDIT: add details.</span></li>
+      <li><b>Channels and categories</b><span>A structure that makes sense to new members and scales with the community.</span></li>
+      <li><b>Decoration</b><span>Custom dividers, embeds, icons and images matched to your game's style.</span></li>
+      <li><b>Rules and onboarding</b><span>Welcome flow, rules and self-assign roles so people know where to go.</span></li>
+      <li><b>Bots and integration</b><span>The bots your community needs, connected to your game when possible.</span></li>
+    </ul>
+
+    <h3>Before and after</h3>
+    <div class="g2">
+      <figure class="shot"><div class="slot"><img src="assets/before.jpg" data-fb="https://valter-server.carrd.co/assets/images/image03.jpg" alt="Server before"></div><figcaption>Before</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/after.jpg" data-fb="https://valter-server.carrd.co/assets/images/image04.jpg" alt="Server after"></div><figcaption>After</figcaption></figure>
+    </div>
+
+    <h3>Roles</h3>
+    <div class="split">
+      <p class="mute">Roles should be clear, informative, and cool. Most users want roles to show off, but apart from that, they are a key part of managing users. Whatever kind of roles you want, I'll make them.</p>
+      <figure class="shot"><div class="slot"><img src="assets/roles.jpg" data-fb="https://valter-server.carrd.co/assets/images/image07.jpg" alt="Role list example"></div></figure>
+    </div>
+
+    <h3>More examples</h3>
+    <div class="g3">
+      <figure class="shot"><div class="slot"><img src="assets/setup-1.jpg" alt=""></div><figcaption>EDIT: caption, for example "Welcome channel"</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/setup-2.jpg" alt=""></div><figcaption>EDIT: caption, for example "Rules embed"</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/setup-3.jpg" alt=""></div><figcaption>EDIT: caption, for example "Onboarding"</figcaption></figure>
+    </div>
+    <div class="cta"><a class="btn" href="#contact">Ask for a set-up <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ BOTS ============ -->
+<section class="detail" id="bots">
+  <div class="wrap">
+    <a class="back" href="#home">← Back to top</a>
+    <h2>Bot creation &amp; Hosting</h2>
+    <p class="lead">Hand-made bots for your custom needs, with integration and utility in mind. I build them, I host them, and I adjust them as your community grows. EDIT: tell them which languages and tools you use.</p>
+    <ul class="inc">
+      <li><b>Roblox integration</b><span>Account verification, player profiles and game stats commands.</span></li>
+      <li><b>Webhooks</b><span>In-game events, updates and logs delivered to the channels you choose.</span></li>
+      <li><b>Community tools</b><span>Moderation, tickets, events and custom commands for your members.</span></li>
+      <li><b>Team apps</b><span>Task tracking, automation and update feeds for developer teams.</span></li>
+      <li><b>Hosting</b><span>Your bot stays online and maintained. EDIT: add details about uptime and support.</span></li>
+    </ul>
+
+    <h3>Bot showcase</h3>
+    <div class="g3">
+      <figure class="shot"><div class="slot"><img src="assets/bot-1.jpg" alt=""></div><figcaption>EDIT: command or embed example</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/bot-2.jpg" alt=""></div><figcaption>EDIT: command or embed example</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/bot-3.jpg" alt=""></div><figcaption>EDIT: command or embed example</figcaption></figure>
+    </div>
+    <div class="slot wide" style="margin-top:20px"><img src="assets/bot-wide.jpg" alt=""></div>
+    <p class="mute" style="margin-top:10px;font-size:.88rem">EDIT: caption for the wide image, for example a full-width screenshot or a video thumbnail.</p>
+    <div class="cta"><a class="btn" href="#contact">Ask for a bot <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ MANAGING ============ -->
+<section class="detail" id="managing">
+  <div class="wrap">
+    <a class="back" href="#home">← Back to top</a>
+    <h2>Managing, Training and Analyzing</h2>
+    <p class="lead">A good server is not done after the set-up. I manage the community, train and evaluate your staff, and read the data so you know what is working. EDIT: add your experience here.</p>
+    <ul class="inc">
+      <li><b>Community managing</b><span>Daily activity, events, announcements and keeping members engaged.</span></li>
+      <li><b>Staff training</b><span>Guides, rules for moderators and practice cases for your team.</span></li>
+      <li><b>Evaluation</b><span>Feedback and follow-up so staff keep improving.</span></li>
+      <li><b>Data analytics</b><span>Growth, activity and retention reports with clear next steps.</span></li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="g3">
+      <figure class="shot"><div class="slot"><img src="assets/managing-1.jpg" alt=""></div><figcaption>EDIT: event or announcement</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/managing-2.jpg" alt=""></div><figcaption>EDIT: staff guide</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/managing-3.jpg" alt=""></div><figcaption>EDIT: analytics report</figcaption></figure>
+    </div>
+    <div class="cta"><a class="btn" href="#contact">Ask for management <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ MORE ============ -->
+<section class="detail" id="more">
+  <div class="wrap">
+    <a class="back" href="#home">← Back to top</a>
+    <h2>It does not end there</h2>
+    <p class="lead">I am also able to make custom servers for dev teams, aiming for a better workflow and ambience, and I can do small scripting and building tasks on Roblox Studio, and regular scripts for any of your needs, mainly for Linux.</p>
+    <ul class="inc">
+      <li><b>Servers for dev teams</b><span>Channels, roles and bots for tasks, bugs, releases and updates.</span></li>
+      <li><b>Roblox Studio</b><span>Small scripting and building tasks. EDIT: add what you are comfortable with.</span></li>
+      <li><b>Linux scripts</b><span>Regular scripts for any need, mainly for Linux.</span></li>
+    </ul>
+
+    <h3>Examples</h3>
+    <div class="g2">
+      <figure class="shot"><div class="slot"><img src="assets/more-1.jpg" alt=""></div><figcaption>EDIT: dev team server</figcaption></figure>
+      <figure class="shot"><div class="slot"><img src="assets/more-2.jpg" alt=""></div><figcaption>EDIT: Studio work or script</figcaption></figure>
+    </div>
+    <div class="cta"><a class="btn" href="#contact">Tell me what you need <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="detail contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about your game</h2>
+    <p class="lead">For pricing, offers and combos, DM on Discord or send me an email. This is how a project usually goes (EDIT it to match yours):</p>
+    <ol class="steps">
+      <li><b>Talk</b>You tell me about your game and community.</li>
+      <li><b>Plan</b>I propose a structure, style and bots.</li>
+      <li><b>Build</b>I set everything up and you review it.</li>
+      <li><b>Hand-off</b>You get the server, guides and support.</li>
+    </ol>
+    <!-- Delete this block if you do not want the promo -->
+    <div class="promo">
+      <h3>First 3 clients get a medium server free</h3>
+      <p>I lost my previous portfolio, so the first three owners who ask for a medium server get it at no cost.</p>
+    </div>
+    <div class="cta">
+      <a class="btn" href="mailto:YOUR_EMAIL@example.com">Send an email</a>
+      <a class="btn" href="https://discord.com/users/YOUR_DISCORD_ID">DM on Discord</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Valter Portfolio | Discord</div></footer>
+
+<script>
+document.querySelectorAll(".slot img").forEach(function(img){
+  var note=document.createElement("span");
+  note.textContent="Add your image: "+img.getAttribute("src");
+  img.after(note);
+  function fail(){
+    if(img.dataset.fb && !img.dataset.tried){img.dataset.tried="1";img.src=img.dataset.fb;}
+    else{img.parentNode.classList.add("empty");}
+  }
+  img.addEventListener("error",fail);
+  if(img.complete && img.naturalWidth===0) fail();
+});
+</script>
+</body>
+</html>
