@@ -13,23 +13,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!--
-=====================  HOW TO FILL THIS SITE  =====================
-1) YOUR LINKS: edit the CONFIG block right below (email, Discord, Roblox). That updates every button.
-2) YOUR FILES: put them in a folder called "assets" next to this file, with these exact names.
-   Empty slots show a dashed box with the name they are waiting for.
-   Home:       intro.gif, setup-cover.jpg, bots-cover.jpg, managing-cover.jpg
-   Set-up:     before.jpg, after.jpg, roles.jpg, setup-1.jpg, setup-2.jpg, setup-3.jpg
-   Bots:       bot-1.jpg, bot-2.jpg, bot-3.jpg, bot-wide.jpg
-   Managing:   managing-1.jpg, managing-2.jpg, managing-3.jpg
-   More:       more-1.jpg, more-2.mp4
-   (png, webp, gif also work: just change the extension in the src.)
-3) CAPTIONS: the text inside <figcaption>...</figcaption> under each slot. Empty = no caption.
-4) MORE IMAGES: copy a whole <figure class="shot">...</figure> block inside a .g2 or .g3 grid.
-   A video uses <video src="assets/name.mp4" controls preload="metadata" playsinline></video> in the same place.
-5) TEXTS: search for the words and type over them. Search "EDIT" for the optional bits (status badge, rotating words).
-===================================================================
--->
 <script>
 var CONFIG={
   email:"valter86709@gmail.com",
@@ -58,7 +41,6 @@ h1,h2,h3{font-weight:300;margin:0;line-height:1.1;letter-spacing:-.01em}
 p{margin:0}
 .mute{color:var(--mute)}
 
-/* ---------- decoration layers ---------- */
 .orbs,.stars{position:fixed;inset:0;z-index:-2;pointer-events:none}
 .orbs i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5}
 .orbs i:nth-child(1){width:380px;height:380px;left:-100px;top:12%;background:#1a45ff;animation:drift 26s ease-in-out infinite alternate}
@@ -78,7 +60,7 @@ p{margin:0}
 .totop.show{opacity:1;pointer-events:auto;transform:none}
 .totop:hover{border-color:var(--lime);color:var(--lime)}
 
-/* ---------- buttons ---------- */
+
 .btn{display:inline-flex;align-items:center;gap:12px;padding:12px 18px;border:1px solid rgba(255,255,255,.3);
   background:rgba(0,0,12,.12);color:var(--ink);text-decoration:none;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:border-color .2s,background .2s,transform .2s}
 .btn span{display:inline-block;transition:transform .2s}
@@ -87,7 +69,6 @@ p{margin:0}
 .top{display:flex;justify-content:space-between;gap:12px;padding-top:28px;flex-wrap:wrap}
 .top div{display:flex;gap:8px;flex-wrap:wrap}
 
-/* ---------- hero ---------- */
 .hero{padding:64px 0 56px}
 .status{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);border:1px solid rgba(255,255,255,.2);padding:7px 14px;margin-bottom:28px}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 2s ease-out infinite}
@@ -104,14 +85,14 @@ p{margin:0}
 hr{border:0;border-top:1px solid var(--line);margin:0}
 hr.lime{border-color:var(--lime)}
 
-/* ticker */
+
 .ticker{overflow:hidden;white-space:nowrap;padding:18px 0;border-bottom:1px solid var(--line);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
 .ticker div{display:inline-block;animation:slide 40s linear infinite}
 .ticker:hover div{animation-play-state:paused}
 .ticker em{font-style:normal;color:var(--lime);margin:0 22px}
 @keyframes slide{to{transform:translateX(-50%)}}
 
-/* ---------- home blocks ---------- */
+
 .intro{display:grid;grid-template-columns:350px 1fr;gap:56px;align-items:center;padding:72px 0}
 .intro .slot{animation:float 6s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-10px)}}
@@ -127,7 +108,6 @@ hr.lime{border-color:var(--lime)}
 .more p{margin:24px 0 28px;color:var(--mute);max-width:46em}
 .price{padding:0 0 88px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(222,228,255,.6)}
 
-/* ---------- image / video slots ---------- */
 .slot{position:relative;aspect-ratio:16/10;border:1px solid var(--lime);background:rgba(0,0,30,.35);overflow:hidden;transition:box-shadow .3s}
 .slot:hover{box-shadow:0 0 28px rgba(200,255,0,.22)}
 .slot.sq{aspect-ratio:1/1;background:#000}
@@ -149,7 +129,6 @@ hr.lime{border-color:var(--lime)}
 .g2{grid-template-columns:1fr 1fr}
 .g3{grid-template-columns:repeat(3,1fr)}
 
-/* ---------- detail sections ---------- */
 .detail{padding:88px 0;border-top:1px solid var(--line)}
 .detail:nth-of-type(odd){border-top-color:var(--lime)}
 .detail h2{font-size:clamp(2.4rem,6.5vw,4.6rem);letter-spacing:-.025em}
@@ -177,7 +156,6 @@ hr.lime{border-color:var(--lime)}
 .contact .cta{display:flex;gap:10px;flex-wrap:wrap}
 footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
 
-/* ---------- scroll reveal (only when JS runs and motion is allowed) ---------- */
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .js .rv.in{opacity:1;transform:none}
 .js hr{transform:scaleX(0);transform-origin:left;transition:transform 1.1s ease}
@@ -214,17 +192,14 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
 <main id="home">
 <div class="wrap">
   <section class="hero">
-    <!-- EDIT: change the text or delete this line -->
     <p class="status"><i></i>Open for new projects</p>
     <h1>More than a server</h1>
-    <!-- EDIT: the words after "I build" rotate; separate them with commas -->
     <p class="say">I build <b class="rot" data-words="servers,bots,events,communities">servers</b> for Roblox Developers</p>
     <p class="txt">Forget about old Discord servers where you join, send messages, and leave. I offer <strong>integration, engagement</strong>, and <strong>customization</strong> with your game or Roblox group.<br>
     I propose a place for your community to engage, keep updated to your game, use in-game features or webhooks to keep playing your game, without having to be on Roblox.<br>
-    In case you have a developer team, I can create Discord apps to track tasks, automate processes, keep everyone updated, and more.</p>
+    In case you have a developer team, I can create Discord apps to track tasks, automate processes, keep everyone updated, and more. NOTE: Everything uploaded in this portfolio is an example of how something will look. As I said, my service is extremely customizable. Ironvale is not real :P</p>
   </section>
   <hr class="lime">
-  <!-- EDIT: ticker words, separated by <em>✦</em> -->
   <div class="ticker" aria-hidden="true"><div>Decoration<em>✦</em>Management<em>✦</em>Training<em>✦</em>Creation<em>✦</em>Integration<em>✦</em>Engagement<em>✦</em>Customization<em>✦</em></div></div>
 
   <section class="intro">
@@ -262,7 +237,6 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
   <p class="price">For pricing, offers and combos, DM on Discord or send me an email.</p>
 </div>
 
-<!-- ============ SERVER SET-UP ============ -->
 <section class="detail" id="setup">
   <div class="wrap">
     <a class="back" href="#home">← Back to top</a>
@@ -298,7 +272,6 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
   </div>
 </section>
 
-<!-- ============ BOTS ============ -->
 <section class="detail" id="bots">
   <div class="wrap">
     <a class="back" href="#home">← Back to top</a>
@@ -323,7 +296,7 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
   </div>
 </section>
 
-<!-- ============ MANAGING ============ -->
+
 <section class="detail" id="managing">
   <div class="wrap">
     <a class="back" href="#home">← Back to top</a>
@@ -346,7 +319,6 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
   </div>
 </section>
 
-<!-- ============ MORE ============ -->
 <section class="detail" id="more">
   <div class="wrap">
     <a class="back" href="#home">← Back to top</a>
@@ -367,7 +339,7 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
+
 <section class="detail contact" id="contact">
   <div class="wrap">
     <h2>Let's talk about your game</h2>
@@ -378,7 +350,7 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
       <li><b>Build</b>I set everything up and you review it.</li>
       <li><b>Hand-off</b>You get the server, guides and support.</li>
     </ol>
-    <!-- EDIT or delete this promo block -->
+
     <div class="promo">
       <h3>First 3 users to send me "PORTFOLIO PROMO" to my DMs get a medium server for free</h3>
       <p>I lost my previous portfolio, so the first three owners who ask for a medium server get it at no cost.</p>
@@ -398,14 +370,12 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
 (function(){
   var calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-  /* links from CONFIG */
   document.querySelectorAll("[data-link]").forEach(function(a){
     var k=a.dataset.link;
     a.href=k==="email"?"mailto:"+CONFIG.email:CONFIG[k];
     if(k!=="email"){a.target="_blank";a.rel="noopener";}
   });
 
-  /* image and video slots: placeholder when the file is missing */
   document.querySelectorAll(".slot img,.slot video").forEach(function(m){
     var isV=m.tagName==="VIDEO", src=m.getAttribute("src");
     var note=document.createElement("span");
@@ -423,11 +393,9 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
     check();addEventListener("load",check);
   });
 
-  /* ticker: duplicate content for a seamless loop */
   var tk=document.querySelector(".ticker div");
   if(tk)tk.innerHTML+=tk.innerHTML;
 
-  /* rotating words */
   var rot=document.querySelector(".rot");
   if(rot&&!calm){
     var w=rot.dataset.words.split(","),i=0;
@@ -437,7 +405,7 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
     },2400);
   }
 
-  /* scroll reveal */
+
   if(!calm&&"IntersectionObserver" in window){
     document.documentElement.classList.add("js");
     var sel=".intro>*,.svc,.more,.price,.detail .wrap>*,.g2>*,.g3>*,.steps li,.inc li,hr";
@@ -451,7 +419,7 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
     });
   }
 
-  /* progress bar and back-to-top button */
+
   var bar=document.getElementById("bar"),up=document.getElementById("totop");
   function onScroll(){
     var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
