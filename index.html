@@ -313,7 +313,7 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
       <figure class="shot"><div class="slot"><img src="assets/bot_2.png" alt=""></div><figcaption></figcaption></figure>
       <figure class="shot"><div class="slot"><img src="assets/bot_3.png" alt=""></div><figcaption></figcaption></figure>
     </div>
-    <figure class="shot" style="margin-top:20px"><div class="slot vid"><video src="assets/bot_demo.mp4" controls preload="metadata" playsinline></video></div><figcaption></figcaption></figure>
+    <figure class="shot" style="margin-top:20px"><div class="slot vid"><video src="assets/bot_demo.mp4" controls preload="metadata" playsinline></video></div><figcaption>Sorry for the media being in Spanish... I mean, it works at the end of the day.</figcaption></figure>
     <div class="cta"><a class="btn" href="#contact">Ask for a bot <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
@@ -396,7 +396,7 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
     if(k!=="email"){a.target="_blank";a.rel="noopener";}
   });
 
-  document.querySelectorAll(".slot img,.slot video").forEach(function(m){
+ document.querySelectorAll(".slot img,.slot video").forEach(function(m){
     var isV=m.tagName==="VIDEO", src=m.getAttribute("src");
     var note=document.createElement("span");
     note.textContent="Add your "+(isV?"video":"image")+": "+src;
@@ -405,15 +405,19 @@ footer{padding:0 0 64px;font-size:.78rem;color:rgba(222,228,255,.55)}
       if(m.dataset.fb&&!m.dataset.tried){m.dataset.tried="1";m.src=m.dataset.fb;}
       else m.parentNode.classList.add("empty");
     }
-    m.addEventListener("error",fail);
-    function check(){
-      if(isV){if(m.error||m.networkState===3)fail();}
-      else if(m.complete&&m.naturalWidth===0)fail();
+    function ok(){
+      m.parentNode.classList.remove("empty");
     }
-    check();addEventListener("load",check);
+    m.addEventListener("error",fail);
+    if(isV){
+      m.addEventListener("loadedmetadata",ok);
+      if(m.error)fail();
+    }else{
+      m.addEventListener("load",ok);
+      if(m.complete&&m.naturalWidth===0)fail();
+    }
   });
 
-  /* click-to-zoom: every picture inside the detail sections (not the 4 on the home page, not videos) */
   var zoomImgs=[].slice.call(document.querySelectorAll(".detail .slot img"));
   var lb=document.createElement("div");
   lb.className="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-modal","true");lb.setAttribute("aria-label","Image viewer");
